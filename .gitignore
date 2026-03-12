@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Data
+**/data/
+**/gtsrb/
+**/large/
+**/small/
+**/corpus*/
+
+# Zips
+*.zip
+
+# OS
+.DS_Store
