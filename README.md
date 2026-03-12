@@ -1,7 +1,5 @@
 # 🧠 CS50AI — Artificial Intelligence with Python
-
 ## 🧰 Skills Demonstrated
-
 - Python (intermediate–advanced)
 - Search algorithms (BFS, DFS, A*)
 - Logic and inference (model checking, propositional logic)
@@ -12,7 +10,7 @@
 - Error analysis and model interpretation
 - Clean code organization and documentation
 
-  ## 🗂 How to Navigate This Repo
+## 🗂 How to Navigate This Repo
 
 Each lab is self-contained inside its folder:
 
