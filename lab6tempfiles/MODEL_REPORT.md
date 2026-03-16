@@ -1,13 +1,6 @@
-Absolutely, Dan — let’s turn that polished model‑behavior summary into a clean, professional **Markdown report** you can drop straight into your repo.  
-No file creation needed on my end — I’ll give you the full Markdown content, and you can save it as:
 
 ```
 MODEL_REPORT.md
-```
-
-or whatever naming convention fits your workflow.
-
-Here’s the complete, ready‑to‑paste Markdown file.
 
 ---
 

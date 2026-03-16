@@ -1,4 +1,5 @@
 import csv
+from encodings.punycode import selective_find
 import sys
 
 from util import Node, StackFrontier, QueueFrontier
@@ -24,7 +25,7 @@ def load_data(directory):
             people[row["id"]] = {
                 "name": row["name"],
                 "birth": row["birth"],
-                "movies": set(),
+                "movies": set()
             }
             if row["name"].lower() not in names:
                 names[row["name"].lower()] = {row["id"]}
@@ -38,7 +39,7 @@ def load_data(directory):
             movies[row["id"]] = {
                 "title": row["title"],
                 "year": row["year"],
-                "stars": set(),
+                "stars": set()
             }
 
     # Load stars
@@ -91,10 +92,7 @@ def shortest_path(source, target):
 
     If no possible path, returns None.
     """
-
-    # Special case: source and target are the same
-    if source == target:
-        return []
+    
 
     # Initialize frontier with the starting person
     start = Node(state=source, parent=None, action=None)
@@ -108,10 +106,10 @@ def shortest_path(source, target):
         # If frontier is empty, no connection exists
         if frontier.empty():
             return None
-
+        
         # Remove from frontier (BFS)
         node = frontier.remove()
-
+        
         # Mark this person as explored
         explored.add(node.state)
 
@@ -121,24 +119,28 @@ def shortest_path(source, target):
             # Skip if already explored or already in frontier
             if person_id in explored or frontier.contains_state(person_id):
                 continue
-
+                
             # Create a new node for this neighboring person
             child = Node(state=person_id, parent=node, action=movie_id)
-
+ 
             # If this neighbor is the target, reconstruct path immediately
             if child.state == target:
                 solution = []
                 current = child
+
+
                 while current.parent is not None:
                     solution.append((current.action, current.state))
                     current = current.parent
                 solution.reverse()
+                
                 return solution
-
+                
                 # Otherwise, add to frontier
-            frontier.add(child)
-
+        frontier.add(child)
+    
     return None
+                
 
 
 def person_id_for_name(name):
